@@ -1,34 +1,36 @@
-﻿using System.Runtime.CompilerServices;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace LD.StateMachine;
-
-public interface IStateMachineProvider
+namespace LD.StateMachine
 {
-    public IStateMachineProvider Object{get;}
-    public void doStuff();
-}
 
-public class StateMachineTaskManager : MonoBehaviour, IStateMachineProvider
-{
-    public static void Initialize()
+    public interface IStateMachineProvider
     {
-        
+        public IStateMachineProvider Object { get; }
+        public void doStuff();
     }
 
-    public IStateMachineProvider Object { get; }
-    public void doStuff()
+    public class StateMachineTaskManager : MonoBehaviour, IStateMachineProvider
     {
-        throw new System.NotImplementedException();
+        public static void Initialize()
+        {
+
+        }
+
+        public IStateMachineProvider Object { get; }
+
+        public void doStuff()
+        {
+            throw new System.NotImplementedException();
+        }
     }
-}
 
-public class StateMachineProxy : IStateMachineProvider
-{
-    public IStateMachineProvider Object { get; }
-
-    public void doStuff()
+    public class StateMachineProxy : IStateMachineProvider
     {
-        throw new System.NotImplementedException();
+        public IStateMachineProvider Object { get; }
+
+        public void doStuff()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
